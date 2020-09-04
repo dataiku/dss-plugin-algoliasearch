@@ -1,0 +1,12 @@
+{
+  "actions": [
+    {
+      "ts": 1599129719136,
+      "action": "INSTALL",
+      "user": "admin"
+    }
+  ],
+  "gitState": {
+    "enabled": false
+  }
+}
