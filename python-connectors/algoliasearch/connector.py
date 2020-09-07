@@ -56,13 +56,19 @@ class AlgoliaSearchConnector(Connector):
 
         print "Final settings : %s" % search_settings
 
-        res = index.search(self.config.get("searchQuery", ""), search_settings)
+        page = 0
+        nbPages = 1
+        while page < nbPages:
+            if page > 0:
+                search_settings["page"] = page
+            res = index.search(self.config.get("searchQuery", ""), search_settings)
+            nbPages = res.get("nbPages", 1)
+            page = page + 1
+            for hit in res["hits"]:
+                if "_highlightResult" in hit:
+                    del hit["_highlightResult"]
 
-        for hit in res["hits"]:
-            if "_highlightResult" in hit:
-                del hit["_highlightResult"]
-
-            yield hit
+                yield hit
 
     def list_partitions(self, dataset_partitioning):
         assert dataset_partitioning is not None
