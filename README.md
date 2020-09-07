@@ -19,7 +19,7 @@ This plugin is distributed under the Apache License version 2.0
 # Changelog
 
 ## Version 0.0.9 (2020/09/07)
-* Handling paging
+* Handling pagination
 
 ## Version 0.0.6 (2019/04/30)
 * Add a code environment
