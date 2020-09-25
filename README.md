@@ -1,4 +1,4 @@
-# Jira Plugin
+# Algoliasearch Plugin
 
 This Dataiku DSS plugin provides a read/write connector to interact with [Algolia Search](https://www.algolia.com).
 
